@@ -15,12 +15,12 @@ export default function NovaLogoBlock() {
         <Image
           src="/brand/logo-mark.png"
           alt="Nova Finance Logo"
-          width={152}
-          height={152}
+          width={760}
+          height={894}
           priority
           className="relative z-10"
           style={{
-            width: "clamp(116px, 31vw, 152px)",
+            width: "clamp(168px, 46vw, 220px)",
             height: "auto",
             filter: "drop-shadow(0 18px 38px rgba(234,88,12,0.18))",
           }}
@@ -28,7 +28,7 @@ export default function NovaLogoBlock() {
       </div>
       <div className="flex flex-col items-center">
         <h1
-          className="text-[32px] font-bold leading-none sm:text-[36px]"
+          className="text-[30px] font-bold leading-none sm:text-[34px]"
           style={{
             color: "var(--nova-navy)",
             fontFamily: "'Inter', 'SF Pro Display', system-ui, sans-serif",
