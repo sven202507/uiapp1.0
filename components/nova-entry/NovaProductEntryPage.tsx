@@ -8,32 +8,34 @@ import ComplianceBadges from "./ComplianceBadges";
 export default function NovaProductEntryPage() {
   return (
     <div
-      className="relative flex flex-col items-center justify-between overflow-hidden"
+      className="relative flex min-h-dvh flex-col items-center justify-between overflow-hidden"
       style={{
         minHeight: "100dvh",
         background: `
-          radial-gradient(ellipse at 30% 20%, rgba(255,193,77,0.55) 0%, transparent 55%),
-          radial-gradient(ellipse at 75% 75%, rgba(255,138,0,0.35) 0%, transparent 50%),
-          radial-gradient(ellipse at 50% 50%, rgba(255,240,210,0.9) 0%, transparent 80%),
-          linear-gradient(160deg, #FFF7E8 0%, #FFE8C7 45%, #FDDBA0 100%)
+          radial-gradient(circle at 50% 30%, rgba(249, 115, 22, 0.22), transparent 36%),
+          radial-gradient(circle at 18% 18%, rgba(248, 184, 78, 0.20), transparent 28%),
+          radial-gradient(circle at 82% 70%, rgba(255, 107, 33, 0.16), transparent 30%),
+          linear-gradient(180deg, var(--nova-cream) 0%, #FFF3E4 48%, var(--nova-white) 100%)
         `,
-        paddingTop: "env(safe-area-inset-top, 20px)",
-        paddingBottom: "env(safe-area-inset-bottom, 20px)",
+        paddingTop: "calc(env(safe-area-inset-top, 0px) + 48px)",
+        paddingBottom: "calc(env(safe-area-inset-bottom, 0px) + 24px)",
       }}
     >
       <RippleBackground />
 
-      {/* Floating orbs */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute"
         style={{
-          top: "-8%", left: "-12%",
-          width: "55vw", height: "55vw",
-          maxWidth: 280, maxHeight: 280,
+          top: "-10%",
+          left: "-14%",
+          width: "54vw",
+          height: "54vw",
+          maxWidth: 260,
+          maxHeight: 260,
           borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(255,193,77,0.45) 0%, transparent 70%)",
-          filter: "blur(40px)",
+          background: "radial-gradient(circle, rgba(248,184,78,0.20) 0%, transparent 72%)",
+          filter: "blur(44px)",
           animation: "floatOrb1 8s ease-in-out infinite",
         }}
       />
@@ -41,36 +43,35 @@ export default function NovaProductEntryPage() {
         aria-hidden="true"
         className="pointer-events-none absolute"
         style={{
-          bottom: "10%", right: "-10%",
-          width: "50vw", height: "50vw",
-          maxWidth: 240, maxHeight: 240,
+          bottom: "8%",
+          right: "-12%",
+          width: "50vw",
+          height: "50vw",
+          maxWidth: 230,
+          maxHeight: 230,
           borderRadius: "50%",
-          background: "radial-gradient(circle, rgba(255,90,61,0.25) 0%, transparent 70%)",
-          filter: "blur(48px)",
+          background: "radial-gradient(circle, rgba(249,115,22,0.16) 0%, transparent 72%)",
+          filter: "blur(52px)",
           animation: "floatOrb2 10s ease-in-out infinite",
         }}
       />
 
-      <div className="flex-1 min-h-[40px]" />
-
       <main
-        className="relative z-10 flex flex-col items-center gap-10 px-6"
+        className="relative z-10 flex flex-1 flex-col items-center justify-center gap-12 px-6 sm:gap-14"
         style={{ animation: "fadeSlideUp 0.9s ease both" }}
       >
         <NovaLogoBlock />
         <WageLoanButton />
       </main>
 
-      <div className="flex-1 min-h-[32px]" />
-
-      <footer className="relative z-10 w-full flex justify-center pb-2">
+      <footer className="relative z-10 flex w-full justify-center">
         <ComplianceBadges />
       </footer>
 
       <style>{`
         @keyframes fadeSlideUp {
-          0%   { opacity: 0; transform: translateY(22px); }
-          100% { opacity: 1; transform: translateY(0);    }
+          0%   { opacity: 0; transform: translateY(2px);   }
+          100% { opacity: 1; transform: translateY(-20px); }
         }
         @keyframes floatOrb1 {
           0%, 100% { transform: translate(0, 0) scale(1);       }

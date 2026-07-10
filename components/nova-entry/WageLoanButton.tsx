@@ -34,14 +34,14 @@ export default function WageLoanButton() {
       aria-label="Apply for Wage Loan"
       className="relative overflow-hidden select-none outline-none focus-visible:ring-4 focus-visible:ring-orange-300"
       style={{
-        width: "clamp(260px, 80vw, 320px)",
-        height: "68px",
-        borderRadius: "34px",
-        background: "linear-gradient(135deg, #FF8A00 0%, #FFC14D 55%, #FF8A00 100%)",
+        width: "clamp(260px, 76vw, 300px)",
+        height: "64px",
+        borderRadius: "32px",
+        background: "linear-gradient(135deg, var(--nova-orange) 0%, var(--nova-orange-bright) 52%, var(--nova-gold) 100%)",
         boxShadow: pressed
-          ? "0 2px 12px rgba(255,138,0,0.35)"
-          : "0 8px 32px rgba(255,138,0,0.45), 0 2px 8px rgba(255,90,61,0.25), inset 0 1px 0 rgba(255,255,255,0.35)",
-        transform: pressed ? "scale(0.97)" : "scale(1)",
+          ? "0 8px 18px rgba(234,88,12,0.20)"
+          : "0 18px 38px rgba(234,88,12,0.24), inset 0 1px 0 rgba(255,255,255,0.28)",
+        transform: pressed ? "scale(0.98)" : "scale(1)",
         transition: "transform 150ms ease, box-shadow 150ms ease",
         border: "none",
         cursor: "pointer",
@@ -51,8 +51,8 @@ export default function WageLoanButton() {
         className="absolute inset-x-0 top-0 pointer-events-none"
         style={{
           height: "50%",
-          borderRadius: "34px 34px 0 0",
-          background: "linear-gradient(180deg, rgba(255,255,255,0.28) 0%, rgba(255,255,255,0) 100%)",
+          borderRadius: "32px 32px 0 0",
+          background: "linear-gradient(180deg, rgba(255,255,255,0.24) 0%, rgba(255,255,255,0) 100%)",
         }}
       />
       {ripples.map((r) => (
@@ -64,7 +64,7 @@ export default function WageLoanButton() {
             top: r.y - 8,
             width: 16,
             height: 16,
-            background: "rgba(255,255,255,0.55)",
+            background: "rgba(255,255,255,0.45)",
             animation: "btnRipple 0.65s ease-out forwards",
           }}
         />
@@ -76,9 +76,9 @@ export default function WageLoanButton() {
             fontSize: "18px",
             fontWeight: 700,
             color: "#fff",
-            letterSpacing: "-0.01em",
+            letterSpacing: "0",
             fontFamily: "'Inter', system-ui, sans-serif",
-            textShadow: "0 1px 4px rgba(0,0,0,0.18)",
+            textShadow: "0 1px 3px rgba(11,22,51,0.16)",
           }}
         >
           Wage Loan
@@ -89,7 +89,7 @@ export default function WageLoanButton() {
             fontSize: "12px",
             fontWeight: 500,
             color: "rgba(255,255,255,0.85)",
-            letterSpacing: "0.06em",
+            letterSpacing: "0",
           }}
         >
           工薪贷

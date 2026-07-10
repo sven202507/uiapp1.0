@@ -2,39 +2,41 @@ import Image from "next/image";
 
 export default function NovaLogoBlock() {
   return (
-    <div className="flex flex-col items-center gap-4 select-none">
+    <div className="flex select-none flex-col items-center gap-4">
       <div className="relative">
         <div
-          className="absolute inset-0 rounded-full blur-2xl opacity-40"
-          style={{ background: "radial-gradient(circle, #FFC14D 0%, #FF8A00 50%, transparent 80%)", transform: "scale(1.4)" }}
+          className="absolute inset-0 rounded-full blur-3xl"
+          style={{
+            background: "radial-gradient(circle, rgba(249,115,22,0.28) 0%, rgba(248,184,78,0.18) 48%, transparent 78%)",
+            opacity: 0.72,
+            transform: "scale(1.34)",
+          }}
         />
         <Image
           src="/brand/logo-mark.png"
           alt="Nova Finance Logo"
-          width={96}
-          height={96}
+          width={152}
+          height={152}
           priority
-          className="relative z-10 drop-shadow-[0_4px_24px_rgba(255,138,0,0.45)]"
-          style={{ width: "clamp(72px, 20vw, 96px)", height: "auto" }}
+          className="relative z-10"
+          style={{
+            width: "clamp(116px, 31vw, 152px)",
+            height: "auto",
+            filter: "drop-shadow(0 18px 38px rgba(234,88,12,0.18))",
+          }}
         />
       </div>
-      <div className="flex flex-col items-center gap-1">
+      <div className="flex flex-col items-center">
         <h1
-          className="text-[28px] font-bold tracking-tight leading-none"
+          className="text-[32px] font-bold leading-none sm:text-[36px]"
           style={{
-            color: "#0B1633",
+            color: "var(--nova-navy)",
             fontFamily: "'Inter', 'SF Pro Display', system-ui, sans-serif",
-            letterSpacing: "-0.02em",
+            letterSpacing: "0",
           }}
         >
           Nova Finance
         </h1>
-        <p
-          className="text-[13px] font-medium tracking-widest uppercase"
-          style={{ color: "#FF8A00", letterSpacing: "0.18em" }}
-        >
-          Cambodia
-        </p>
       </div>
     </div>
   );

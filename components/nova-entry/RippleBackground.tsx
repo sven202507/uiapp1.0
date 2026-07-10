@@ -53,13 +53,13 @@ export default function RippleBackground() {
         const fade = Math.sin(progress * Math.PI);
         const maxR = Math.max(w, h) * 0.55;
         const radius = 10 + progress * maxR;
-        const alpha = Math.min(0.55, fade * r.strength);
+        const alpha = Math.min(0.42, fade * r.strength);
 
         const grd = ctx.createRadialGradient(r.x, r.y, radius * 0.4, r.x, r.y, radius);
         grd.addColorStop(0,    "rgba(255,255,255,0)");
-        grd.addColorStop(0.55, `rgba(255,255,255,${alpha * 0.04})`);
-        grd.addColorStop(0.72, `rgba(255,193,77,${alpha * 0.32})`);
-        grd.addColorStop(0.86, `rgba(255,138,0,${alpha * 0.22})`);
+        grd.addColorStop(0.55, `rgba(255,255,255,${alpha * 0.45})`);
+        grd.addColorStop(0.74, `rgba(249,115,22,${alpha * 0.20})`);
+        grd.addColorStop(0.88, `rgba(248,184,78,${alpha * 0.18})`);
         grd.addColorStop(1,    "rgba(255,255,255,0)");
         ctx.fillStyle = grd;
         ctx.beginPath();
@@ -67,24 +67,24 @@ export default function RippleBackground() {
         ctx.fill();
 
         ctx.save();
-        ctx.shadowBlur = 10;
-        ctx.shadowColor = `rgba(255,138,0,${alpha * 0.3})`;
-        ctx.strokeStyle = `rgba(255,255,255,${alpha * 0.7})`;
-        ctx.lineWidth = 1.8;
+        ctx.shadowBlur = 8;
+        ctx.shadowColor = `rgba(249,115,22,${alpha * 0.18})`;
+        ctx.strokeStyle = `rgba(255,255,255,${alpha * 0.45})`;
+        ctx.lineWidth = 1.4;
         ctx.beginPath();
         ctx.arc(r.x, r.y, radius, 0, Math.PI * 2);
         ctx.stroke();
 
-        ctx.shadowBlur = 6;
-        ctx.shadowColor = `rgba(255,193,77,${alpha * 0.4})`;
-        ctx.strokeStyle = `rgba(255,193,77,${alpha * 0.5})`;
-        ctx.lineWidth = 1.2;
+        ctx.shadowBlur = 4;
+        ctx.shadowColor = `rgba(248,184,78,${alpha * 0.18})`;
+        ctx.strokeStyle = `rgba(248,184,78,${alpha * 0.24})`;
+        ctx.lineWidth = 1;
         ctx.beginPath();
         ctx.arc(r.x, r.y, Math.max(4, radius * 0.62), 0, Math.PI * 2);
         ctx.stroke();
         ctx.restore();
 
-        ctx.fillStyle = `rgba(255,255,255,${alpha * 0.25})`;
+        ctx.fillStyle = `rgba(255,255,255,${alpha * 0.16})`;
         ctx.beginPath();
         ctx.arc(r.x, r.y, Math.max(2, 7 * fade), 0, Math.PI * 2);
         ctx.fill();
@@ -106,19 +106,19 @@ export default function RippleBackground() {
       addRipple(cx - rect.left, cy - rect.top, strength);
     };
 
-    const onPointerDown = (e: PointerEvent) => fromClient(e.clientX, e.clientY, 0.55);
+    const onPointerDown = (e: PointerEvent) => fromClient(e.clientX, e.clientY, 0.42);
 
     const scheduleAmbient = () => {
       clearTimeout(ambientTimer);
       ambientTimer = window.setTimeout(() => {
         if (!document.hidden && w > 0)
-          addRipple(w * (0.15 + Math.random() * 0.7), h * (0.15 + Math.random() * 0.7), 0.12);
+          addRipple(w * (0.15 + Math.random() * 0.7), h * (0.15 + Math.random() * 0.7), 0.08);
         scheduleAmbient();
       }, 4000 + Math.random() * 3000);
     };
 
     resize();
-    setTimeout(() => addRipple(w * 0.5, h * 0.5, 0.28), 800);
+    setTimeout(() => addRipple(w * 0.5, h * 0.5, 0.18), 800);
     scheduleAmbient();
 
     window.addEventListener("resize", resize, { passive: true });

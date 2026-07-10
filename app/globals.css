@@ -3,6 +3,18 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --nova-navy: #0b1633;
+  --nova-navy-soft: #14213d;
+  --nova-orange: #f97316;
+  --nova-orange-deep: #ea580c;
+  --nova-orange-bright: #ff6b21;
+  --nova-gold: #f8b84e;
+  --nova-cream: #fff7ed;
+  --nova-cream-2: #ffefd8;
+  --nova-white: #ffffff;
+  --nova-border: rgba(249, 115, 22, 0.22);
+  --nova-border-soft: rgba(249, 115, 22, 0.14);
+  --nova-shadow: rgba(234, 88, 12, 0.22);
 }
 
 @theme inline {
